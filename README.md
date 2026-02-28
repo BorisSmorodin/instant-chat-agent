@@ -10,7 +10,9 @@
 
 ## Структура проекта
 
-См. [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) и [docs/DECOMPOSITION.md](docs/DECOMPOSITION.md).
+- [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) — структура каталогов
+- [docs/DECOMPOSITION.md](docs/DECOMPOSITION.md) — декомпозиция и детализация
+- [docs/PROGRESS.md](docs/PROGRESS.md) — выполненные задачи, прогресс по фазам
 
 ## Быстрый старт
 

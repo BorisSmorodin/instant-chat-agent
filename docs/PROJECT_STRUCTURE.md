@@ -10,7 +10,8 @@ instant-chat-agent/
 │   └── compose.yml            # PostgreSQL, Redis, Qdrant
 ├── docs/
 │   ├── DECOMPOSITION.md       # Декомпозиция и детализация
-│   └── PROJECT_STRUCTURE.md   # Этот файл
+│   ├── PROJECT_STRUCTURE.md  # Этот файл
+│   └── PROGRESS.md           # Выполненные задачи, прогресс по фазам
 ├── scripts/
 │   ├── run_product_bot.py     # Запуск бота продукта
 │   └── migrate_db.py          # Миграции БД

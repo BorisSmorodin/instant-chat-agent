@@ -6,10 +6,14 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     """Настройки приложения."""
 
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
-    # Database
-    database_url: str = "postgresql://user:pass@localhost:5432/instant_chat"
+    # Database (postgresql:// or postgresql+asyncpg://)
+    database_url: str = "postgresql+asyncpg://user:pass@localhost:5432/instant_chat"
 
     # Redis (сессии, очереди)
     redis_url: str = "redis://localhost:6379/0"
@@ -31,3 +35,14 @@ class Settings(BaseSettings):
 
     # Trial
     trial_days: int = 5
+
+
+_settings: Settings | None = None
+
+
+def get_settings() -> Settings:
+    """Возвращает синглтон настроек."""
+    global _settings
+    if _settings is None:
+        _settings = Settings()
+    return _settings
