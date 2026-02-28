@@ -1,0 +1,13 @@
+# Клиентский RAG-бот (запускается в контейнере на каждого бота)
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY pyproject.toml .
+RUN pip install -e .
+
+COPY src/ src/
+
+ENV PYTHONPATH=/app/src
+# BOT_TOKEN, BOT_ID, QDRANT_URL, CONFIG_SOURCE — передаются при запуске
+CMD ["python", "-m", "instant_chat_agent.bot.main"]
